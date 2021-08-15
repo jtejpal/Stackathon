@@ -1,7 +1,7 @@
 {
-  "name": "fs-app-template",
+  "name": "stackathon",
   "version": "2.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "Some boilerplate code",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -20,15 +20,23 @@
   "author": "Fullstack Academy of Code",
   "license": "MIT",
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.4.1",
+    "@stripe/stripe-js": "^1.17.0",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "compression": "^1.7.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "history": "^4.9.0",
     "jsonwebtoken": "^8.5.1",
+    "lyrics-searcher": "^1.0.54",
     "morgan": "^1.9.1",
     "pg": "^8.5.1",
-    "sequelize": "^6.3.5"
+    "querystring": "^0.2.1",
+    "react-spotify-web-playback": "^0.8.2",
+    "sequelize": "^6.3.5",
+    "stripe": "^8.169.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

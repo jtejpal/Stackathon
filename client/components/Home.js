@@ -6,10 +6,10 @@ import {connect} from 'react-redux'
  */
 export const Home = props => {
   const {username} = props
-
   return (
-    <div>
+    <div className="fw-bold text-whiite">
       <h3>Welcome, {username}</h3>
+      <a href="api/spotify/login">Log in with Spotify</a>
     </div>
   )
 }
@@ -19,7 +19,8 @@ export const Home = props => {
  */
 const mapState = state => {
   return {
-    username: state.auth.username
+    username: state.auth.username,
+    stripeCustomer: state.stripeCustomer
   }
 }
 

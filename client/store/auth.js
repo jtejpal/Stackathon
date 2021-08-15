@@ -7,11 +7,19 @@ const TOKEN = 'token'
  * ACTION TYPES
  */
 const SET_AUTH = 'SET_AUTH'
+const UPDATE_USER_STRIPE_ID = "UPDATE_USER_STRIPE_ID"
 
 /**
  * ACTION CREATORS
  */
 const setAuth = auth => ({type: SET_AUTH, auth})
+
+const updateUser = (user) => {
+  return {
+    type: UPDATE_USER_STRIPE_ID,
+    user
+  }
+}
 
 /**
  * THUNK CREATORS
@@ -47,6 +55,18 @@ export const logout = () => {
   }
 }
 
+//Updating User StripeId property
+export const updateUserStripeIdThunk = (userId, stripeId) => {
+  return async (dispatch) => {
+    try {
+      const { data: updatedUser } = await axios.put(`/api/users/${userId}`, {stripeId})
+      dispatch(updateUser(updatedUser))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
 /**
  * REDUCER
  */
@@ -54,6 +74,8 @@ export default function(state = {}, action) {
   switch (action.type) {
     case SET_AUTH:
       return action.auth
+    case UPDATE_USER_STRIPE_ID:
+      return action.user
     default:
       return state
   }

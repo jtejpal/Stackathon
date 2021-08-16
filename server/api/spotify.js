@@ -5,9 +5,9 @@ const querystring = require("querystring");
 // const cookieParser = require('cookie-parser');
 module.exports = router;
 
-const client_id = "63b6590c08544d26816f290d6021e4af"; // Your client id
-const client_secret = "6de2995f4edd4b93b5c906834123b30a"; // Your secret
-const redirect_uri = "http://localhost:8080/api/spotify/callback"; // Your redirect uri
+const client_id =  process.env.spotify_client_id; // Your client id
+const client_secret = process.env.spotify_client_secret; // Your secret
+const redirect_uri = process.env.spotify_redirect_uri; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters

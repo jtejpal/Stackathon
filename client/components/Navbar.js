@@ -9,13 +9,13 @@ class Navbar extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.stripeCustomer !== this.props.stripeCustomer) {
       if (Object.keys(this.props.stripeCustomer).includes("subscriptions")){
-        const tier1 = 'prod_K2BSaA3HZuEQjh'
+        // const tier1 = 'prod_K2BSaA3HZuEQjh'
         if (this.props.stripeCustomer.subscriptions.total_count === 0) {
           const lyricsLink = document.getElementById('lyricsLink')
           lyricsLink.setAttribute("hidden", true)
           return
         }
-        if (this.props.stripeCustomer.subscriptions.data[0].plan.product === tier1){
+        if (this.props.stripeCustomer.subscriptions.data[0].plan.product === "prod_K2BSaA3HZuEQjh"){
           const lyricsLink = document.getElementById('lyricsLink')
           lyricsLink.removeAttribute("hidden")
         }
